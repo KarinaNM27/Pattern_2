@@ -17,6 +17,7 @@ class AuthTest {
     @Test
     @DisplayName("Should successfully login with active registered user")
     void shouldSuccessfulLoginIfRegisteredActiveUser() {
+
         var registeredUser = DataGenerator.Registration.getRegisteredUser("active");
         $("[data-test-id='login'] input").setValue(registeredUser.getLogin());
         $("[data-test-id='password'] input").setValue(registeredUser.getPassword());
@@ -38,6 +39,7 @@ class AuthTest {
     @Test
     @DisplayName("Should get error message if login with blocked registered user")
     void shouldGetErrorIfBlockedUser() {
+
         var blockedUser = DataGenerator.Registration.getRegisteredUser("blocked");
         $("[data-test-id='login'] input").setValue(blockedUser.getLogin());
         $("[data-test-id='password'] input").setValue(blockedUser.getPassword());
